@@ -109,10 +109,18 @@ class CLI:
         start, stop = wrappers
 
         ## Add item numbers
-        items = [cls.menu_title] + [
+        items = [
             f"{start}{ct % len(items)}{stop} {item}"
             for ct, item in enumerate(items, start=1)
         ]
+
+        ## Add additional menu items
+        items = [
+            cls.menu_title,
+            f"Current page number    → {Scraper.page}",
+            f"No. of displayed items → {Scraper.length}",
+            "",
+        ] + items
 
         print(*items, sep="\n")
 
