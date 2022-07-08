@@ -11,6 +11,8 @@ A scraping and parsing tool for my university registrar, written in **Python** a
 - Python 3.9
 - Requests
 - Beautiful Soup 4
+- Flake8, for linting
+- Black, for _opinionated_ formatting
 
 ## Difference(s) from original
 
