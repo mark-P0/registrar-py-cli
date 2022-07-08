@@ -19,6 +19,23 @@ class Scraper:
     length = 20
     keyword = ""
 
+    page_min = 1
+    page_increments = 1
+
+    @classmethod
+    def set_next_page(cls) -> bool:
+        cls.page += cls.page_increments
+
+        return True
+
+    @classmethod
+    def set_previous_page(cls) -> bool:
+        if cls.page == cls.page_min:
+            return False
+
+        cls.page -= cls.page_increments
+        return True
+
     @classmethod
     def get_start_effective(cls):
         return cls.length * (cls.page - 1)
