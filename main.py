@@ -3,6 +3,8 @@ from cli import CLI
 
 def main():
     while True:
+        CLI.show_results()
+        print()
         CLI.show_menu()
 
         selection = CLI.get_input()
