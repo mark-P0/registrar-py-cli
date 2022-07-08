@@ -1,0 +1,12 @@
+[flake8]
+ignore =
+    ### [GLOBALS]
+    ## Allow multiple leading comments symbols (#)
+    E266,
+    ## Allow long lines
+    E501,
+    ## Allow breaking operators
+    W503,
+
+    ### [PROJECT-SPECIFIC]
+    ## ...
