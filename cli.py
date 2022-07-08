@@ -89,7 +89,7 @@ class CLI:
                 f"[{error}]",
             ]
             print(*msg, sep="\n")
-            data = {}
+            data = []
 
         ## Parse text from HTML data
         for idx, row in enumerate(data):
