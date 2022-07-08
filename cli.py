@@ -9,7 +9,7 @@ class CLI:
         "Previous page",
         "Change number of displayed rows",
         "Search for a keyword",
-        "Search for a schedule code",
+        # "Search for a schedule code",
         "Refresh session",
         "End program",
     )
@@ -18,13 +18,18 @@ class CLI:
     input_prompt = "Please make a selection: "
     input_prompt_continue = "Press Enter to continue. . ."
     input_callbacks = {
-        "1": Callback.next_page,
-        "2": Callback.previous_page,
-        "3": Callback.change_result_ct,
-        "4": Callback.set_search_keyword,
-        "5": Callback.search_schedule_code,
-        "6": Callback.refresh_session,
-        "0": Callback.end_program,
+        str(idx): callback
+        for idx, callback in enumerate(
+            (
+                Callback.end_program,
+                Callback.next_page,
+                Callback.previous_page,
+                Callback.change_result_ct,
+                Callback.set_search_keyword,
+                # Callback.search_schedule_code,
+                Callback.refresh_session,
+            )
+        )
     }
 
     table_headers = (

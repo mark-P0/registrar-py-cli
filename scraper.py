@@ -6,7 +6,8 @@ class Scraper:
     ## URL strings
     url = (url := {"base": "https://registrar.cvsu.edu.ph"}) | {
         "info": f"{url['base']}/parts/dtsubject.php",
-        "sched": f"{url['base']}/studentlist.php?schedcode=",
+        ## TODO: Use proper URL encoding? `urllib.parse`
+        # "sched": f"{url['base']}/studentlist.php?schedcode=",
     }
 
     ## `requests` session

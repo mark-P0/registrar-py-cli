@@ -58,9 +58,11 @@ class Callback:
         msg = "\n".join(msg)
         print(msg)
 
+    """
     @staticmethod
     def search_schedule_code():
         ...
+    """
 
     @staticmethod
     def refresh_session():
