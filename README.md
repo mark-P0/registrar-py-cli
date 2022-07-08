@@ -1,11 +1,12 @@
 # Registrar (CLI)
 
-<!-- A Python CLI program for scraping the registrar -->
+<!-- A Python CLI program for registrar scraping -->
 
 A scraping and parsing tool for my university registrar, written in **Python** and used via the **command line**.
 
 ## Packages
 
+- Python 3.9
 - Requests
 - Beautiful Soup 4
 
