@@ -120,6 +120,7 @@ class CLI:
             cls.menu_title,
             f"Current page number    → {Scraper.page}",
             f"No. of displayed items → {Scraper.length}",
+            f"Keyword searching for  → {Scraper.keyword!r}",
             "",
         ] + items
 
