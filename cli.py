@@ -82,6 +82,7 @@ class CLI:
             response = Scraper.get_response()
             json = response.json()
             data = json["data"]
+        ## TODO: Make this catch-all more specific?
         except Exception as error:
             msg = [
                 "An error has occurred. The connection might be rejected.",
