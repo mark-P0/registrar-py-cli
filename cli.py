@@ -3,6 +3,7 @@ from scraper import Scraper
 
 
 class CLI:
+    menu_title = "University Registrar".upper()
     menu_items_raw = (
         "Next page",
         "Previous page",
@@ -108,10 +109,10 @@ class CLI:
         start, stop = wrappers
 
         ## Add item numbers
-        items = tuple(
+        items = [cls.menu_title] + [
             f"{start}{ct % len(items)}{stop} {item}"
             for ct, item in enumerate(items, start=1)
-        )
+        ]
 
         print(*items, sep="\n")
 
