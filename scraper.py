@@ -38,11 +38,11 @@ class Scraper:
         return True
 
     @classmethod
-    def get_start_effective(cls):
+    def get_start_effective(cls) -> int:
         return cls.length * (cls.page - 1)
 
     @classmethod
-    def get_response(cls):
+    def get_response(cls) -> object:
         start, length, keyword = [
             str(_) for _ in (cls.get_start_effective(), cls.length, cls.keyword)
         ]
@@ -61,15 +61,15 @@ class Scraper:
         return response
 
     @staticmethod
-    def get_element_text(element_string):
+    def get_element_text(element_string) -> object:
         return BeautifulSoup(element_string, "html.parser").get_text()
 
     @classmethod
-    def initialize_connection(cls):
+    def initialize_connection(cls) -> None:
         cls.sesh.get(cls.url["base"])
 
     @classmethod
-    def renew_session(cls):
+    def renew_session(cls) -> None:
         cls.sesh = Session()
         cls.initialize_connection()
 
