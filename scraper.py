@@ -48,12 +48,6 @@ class Scraper:
 
     @classmethod
     def initialize_connection(cls):
-        """
-        Perform a GET on the base URL
-        Needed for record retrieval to work properly
-        Initializes the cookies...?
-        """
-
         cls.sesh.get(cls.url["base"])
 
     @classmethod
@@ -62,6 +56,9 @@ class Scraper:
         cls.initialize_connection()
 
 
+## Perform a GET on the base URL
+## Needed for record retrieval to work properly
+## Initializes the cookies...?
 Scraper.initialize_connection()
 
 
