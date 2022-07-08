@@ -77,9 +77,18 @@ class CLI:
 
     @classmethod
     def show_data(cls) -> None:
-        response = Scraper.get_response()
-        json = response.json()
-        data = json["data"]
+        try:
+            response = Scraper.get_response()
+            json = response.json()
+            data = json["data"]
+        except Exception as error:
+            msg = [
+                "An error has occurred. The connection might be rejected.",
+                "You could try again.",
+                f"[{error}]",
+            ]
+            print(*msg, sep="\n")
+            data = {}
 
         ## Parse text from HTML data
         for idx, row in enumerate(data):
