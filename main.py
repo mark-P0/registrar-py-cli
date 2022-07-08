@@ -1,7 +1,7 @@
 from cli import CLI
 
 
-def main():
+def main() -> None:
     while True:
         CLI.show_data()
         print()
