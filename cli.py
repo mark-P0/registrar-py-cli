@@ -76,7 +76,7 @@ class CLI:
         # fmt: on
 
     @classmethod
-    def show_results(cls) -> None:
+    def show_data(cls) -> None:
         response = Scraper.get_response()
         json = response.json()
         data = json["data"]

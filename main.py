@@ -3,7 +3,7 @@ from cli import CLI
 
 def main():
     while True:
-        CLI.show_results()
+        CLI.show_data()
         print()
         CLI.show_menu()
 
