@@ -3,7 +3,7 @@ from scraper import Scraper
 
 class Callback:
     @staticmethod
-    def next_page(increment: int = 1):
+    def next_page(increment: int = 1) -> None:
         previous = Scraper.page
         is_success = Scraper.set_next_page()
         current = Scraper.page
@@ -15,7 +15,7 @@ class Callback:
         print(msg)
 
     @staticmethod
-    def previous_page(decrement: int = 1):
+    def previous_page(decrement: int = 1) -> None:
         previous = Scraper.page
         is_success = Scraper.set_previous_page()
         current = Scraper.page
@@ -27,7 +27,7 @@ class Callback:
         print(msg)
 
     @staticmethod
-    def change_result_ct(prompt: str = "Enter number of rows desired: "):
+    def change_result_ct(prompt: str = "Enter number of rows desired: ") -> None:
         user_input = input(prompt)
 
         if user_input.isdigit():
@@ -45,7 +45,7 @@ class Callback:
         print(msg)
 
     @staticmethod
-    def set_search_keyword(prompt: str = "Enter keyword(s) to search for: "):
+    def set_search_keyword(prompt: str = "Enter keyword(s) to search for: ") -> None:
         user_input = input(prompt)
 
         Scraper.keyword = user_input
@@ -65,7 +65,7 @@ class Callback:
     """
 
     @staticmethod
-    def refresh_session():
+    def refresh_session() -> None:
         Scraper.renew_session()
         Scraper.page = Scraper.page_min
 
@@ -77,10 +77,10 @@ class Callback:
         print(msg)
 
     @staticmethod
-    def end_program():
+    def end_program() -> None:
         print("Thank you very much!")
         raise SystemExit
 
     @staticmethod
-    def invalid():
+    def invalid() -> None:
         print("You have made an invalid selection!")
