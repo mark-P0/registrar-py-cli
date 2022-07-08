@@ -13,6 +13,9 @@ def main():
         CLI.activate_behavior(selection)
         print()
 
+        CLI.prompt_continue()
+        print()
+
 
 if __name__ == "__main__":
     main()

@@ -18,13 +18,13 @@ class CLI:
     input_prompt = "Please make a selection: "
     input_prompt_continue = "Press Enter to continue. . ."
     input_callbacks = {
+        "1": Callback.next_page,
+        "2": Callback.previous_page,
+        "3": Callback.change_result_ct,
+        "4": Callback.set_search_keyword,
+        "5": Callback.search_schedule_code,
+        "6": Callback.refresh_session,
         "0": Callback.end_program,
-        "1": Callback._,
-        "2": Callback._,
-        "3": Callback._,
-        "4": Callback._,
-        "5": Callback._,
-        "6": Callback._,
     }
 
     table_headers = (
@@ -128,4 +128,6 @@ class CLI:
         callback = cls.input_callbacks.get(selection, Callback.invalid)
         callback()
 
+    @classmethod
+    def prompt_continue(cls) -> None:
         input(cls.input_prompt_continue)
