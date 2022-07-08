@@ -10,7 +10,7 @@ class CLI:
         "Change number of displayed rows",
         "Search for a keyword",
         "Search for a schedule code",
-        "Refresh cookies",
+        "Refresh session",
         "End program",
     )
     menu_item_wrappers = ("[", "]")
