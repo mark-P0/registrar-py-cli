@@ -93,8 +93,13 @@ class CLI:
             data = []
 
         ## Parse text from HTML data
-        for idx, row in enumerate(data):
-            data[idx][0] = Scraper.get_element_text(row[0])
+        ## Some cells has embedded markup details
+        # fmt: off
+        data = [
+            [Scraper.get_element_text(cell) for cell in row]
+            for row in data
+        ]
+        # fmt: on
 
         ## Add column headers to data
         data = [cls.table_headers] + data
